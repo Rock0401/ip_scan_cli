@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 import urllib3
 from requests.auth import HTTPBasicAuth
-import getpass
 
 
 #disable warning of SSL
@@ -33,8 +32,8 @@ def print_banner():
         "Press Enter to use default (admin,password)",
         "",
         "IP range",
-        "Starting IP can be complete IP (e.g., 10.2.1.1) or host addr (1->10.1.111.1) (default:10.1.111.100)",
-        "Ending IP can only be host addr (1 to 254, default:200)",
+        "Starting IP can be complete IP (e.g., 10.2.1.1) or host addr (1->10.1.111.1) (default:10.1.111.2)",
+        "Ending IP can only be host addr (1 to 254, default:51)",
         "",
         "Timeout",
         "set to 0.2 seconds may sometimes fail to receive some responses",
@@ -56,9 +55,9 @@ try:
     username=input("Please enter username(default: admin, press enter):") or "admin"
     password=input("Please enter password(default: password):") or "password"
 
-    scan_ip=(get_ip_input(("Please enter starting IP for scan range(default: 100):"),"10.1.111.100"))
-    scan_end=(input("Please enter ending IP for scan range (default: 200, host address only):")) or 200
-    timeout=(input("Please enter timeout (default: 0.2):")) or 0.2
+    scan_ip=(get_ip_input(("Please enter starting IP for scan range(default: 2):"),"10.1.111.2"))
+    scan_end=(input("Please enter ending IP for scan range (default: 51, host address only):")) or 51
+    timeout=(input("Please enter timeout (default: 0.5):")) or 0.5
 
     parts=scan_ip.split(".")
     network_addr=".".join(parts[:3]) +"."
