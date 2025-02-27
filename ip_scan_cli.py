@@ -99,8 +99,8 @@ def main():
             for target_ip,model,sn in results:
                 if model != "Cannot connect." and model != "Login Fail":
                     valid_ip.append((target_ip,model,sn))
-        for ip,model,sn in valid_ip:
-            print(f"IP:{ip.ljust(20)} {model.ljust(30)}"+f"SN:{sn.ljust(25)}")
+        #for ip,model,sn in valid_ip:
+        #    print(f"IP:{ip.ljust(20)} {model.ljust(30)}"+f"SN:{sn.ljust(25)}")
         print("Found",len(valid_ip),"devices")
         input("Press Enter to exit...")
     except KeyboardInterrupt:
