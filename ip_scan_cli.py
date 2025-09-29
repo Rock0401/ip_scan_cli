@@ -43,7 +43,7 @@ def print_banner():
         "",
         "IP range:",
         "Starting IP can be full IP (e.g., 10.2.1.1) or last octet (e.g., 1 for 10.1.111.1) (default:2)",
-        "Ending IP should be the last octet (1 to 254, default:250)",
+        "Ending IP should be the last octet (1 to 254, default:254)",
         "",
         "For any issues, please contact Rock",
     ]
@@ -104,7 +104,7 @@ def main():
         password=input("Please enter password (default: password):") or "password"
         
         scan_ip_start=get_ip_input(("Please enter starting IP for scan range (default: 2):"), "10.1.111.2")
-        scan_ip_end=int(get_limited_input("Please enter ending IP for scan range (default: 250, last octet only):",254,250))
+        scan_ip_end=int(get_limited_input("Please enter ending IP for scan range (default: 254, last octet only):",254,254))
         #timeout=float(get_limited_input("Please enter timeout (default: 0.6):",10,0.6) or 0.6)
         timeout=0.6
         
